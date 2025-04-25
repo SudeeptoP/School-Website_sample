@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Mission School</title>
+    <link rel="stylesheet" href="holy.css">
+    <script src="holy.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3f7fb;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: linear-gradient(to right, #353d4a, #4364F7, #6FB1FC);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+        }
+
+        .tagline {
+            font-style: italic;
+            font-size: 1.2em;
+            margin-top: 0.5em;
+        }
+
+        nav ul.menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            background: #003c8f;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul.menu > li {
+            position: relative;
+        }
+
+        nav ul.menu > li > a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        nav ul.menu > li:hover {
+            background: #002f6c;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            background: #0059b3;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+            min-width: 200px;
+        }
+
+        .submenu li a {
+            padding: 0.75rem 1.25rem;
+            display: block;
+            color: white;
+            text-decoration: none;
+        }
+
+        .submenu li a:hover {
+            background-color: #004080;
+        }
+
+        .has-submenu:hover .submenu {
+            display: block;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #003c8f;
+        }
+
+        #chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }                                                                                                                                                                           sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+        #chatbot button {
+            background: #0052D4;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        #chatbox {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 15px;
+            margin-top: 10px;
+            width: 300px;
+        }
+
+        #chatbox p {
+            margin-top: 0;
+        }
+
+        #chatbox input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #chatbox button {
+            margin-top: 10px;
+            width: 100%;
+            background: #003c8f;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="D:\My Software Projects_CV\Website Project_1\logo.png.png" alt="Holy Mission School Logo" class="logo">
+        <h1>Holy Mission School</h1>
+        <p class="tagline">Empowering Minds, Building Futures</p>
+        <nav>
+               <ul class="menu">
+                <li><a href="#home" onclick="event.preventDefault(); showSection('home')">Home</a></li>
+                    <li class="has-submenu">
+                    <a href="#about">About Us</a>
+                    <ul class="submenu">
+                        <li><a href="#about-overview" onclick="event.preventDefault(); showSection('about-overview')">Overview</a></li>
+                        <li><a href="#about-Mission and Vision" onclick="event.preventDefault(); showSection('about-Mission and Vision')">Mission and Vision</a></li>
+                        <li><a href="#about-awards" onclick="event.preventDefault(); showSection('about-awards')">Awards</a></li>
+                        <li><a href="#about-career" onclick="event.preventDefault(); showSection('about-career')">Careers</a></li>
+                </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#approach">Approach</a>
+                    <ul class="submenu">
+                        <li><a href="#approach-academics" onclick="event.preventDefault(); showSection('approach-academics')">Academics</a></li>
+                        <li><a href="#approach-programs" onclick="event.preventDefault(); showSection('approach-programs')">Programs</a></li>
+                        </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#facilities">Facilities</a>
+                    <ul class="submenu">
+                        <li><a href="#facilities-overview" onclick="event.preventDefault(); showSection('facilities-overview')">Facilities</a></li>
+                        <li><a href="#facilities-sports" onclick="event.preventDefault(); showSection('facilities-sports')">Sports</a></li>
+                        <li><a href="#facilities-computer" onclick="event.preventDefault(); showSection('facilities-computer')">Computer Lab</a></li>
+                        <li><a href="#facilities-science" onclick="event.preventDefault(); showSection('facilities-science')">Science Lab</a></li>
+                        <li><a href="#facilities-scripture" onclick="event.preventDefault(); showSection('facilities-scripture')">Scriptures</a></li>
+
+
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#admissions">Admissions</a>
+                    <ul class="submenu">
+                        <li><a href="#admissions-overview" onclick="event.preventDefault(); showSection('admissions-overview')">Overview</a></li>
+                        <li><a href="#admissions-enroll" onclick="event.preventDefault(); showSection('admissions-enroll')">Enroll Now</a></li>
+
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#stories">Stories</a>
+                    <ul class="submenu">
+                        <li><a href="#stories-achievements" onclick="event.preventDefault(); showSection('stories-achievements')">Achievements</a></li>
+                        <li><a href="#stories-alumni" onclick="event.preventDefault(); showSection('stories-alumni')">Alumni</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#edunext" onclick="event.preventDefault(); showSection('edunext')">Edunext</a></li>
+                    <li><a href="#contact" onclick="event.preventDefault(); showSection('contact')">Contact Us</a></li>
+                 </ul>
+             </nav>
+    </header>
+<main>
+  <section id="home" style="display: block;">
+            <h2>Welcome to Holy Mission School</h2>
+            <p>Holy Mission School is a premier educational institution committed to academic excellence, character development, and community engagement. With a rich history of nurturing young minds, we strive to provide an inclusive and dynamic learning environment that empowers students to achieve their fullest potential. Our school integrates modern teaching methodologies with traditional values to build a strong foundation for lifelong learning.</p>
+        </section>
+    
+        <section id="about-overview" style="display: none;">
+            <h2>About Us - Overview</h2>
+            <p>Holy Mission School is dedicated to fostering an environment of academic excellence, cultural richness, and social responsibility. We aim to nurture young minds through a holistic education system that promotes intellectual, emotional, and physical development.</p>
+        </section>
+    
+        <section id="about-Mission and Vision" style="display: none;">
+            <h2>Mission and Vision</h2>
+            <p>Our mission is to empower students with the knowledge and skills necessary to thrive in a dynamic world. Our vision is to be a beacon of educational excellence, cultivating responsible global citizens through innovative and inclusive learning practices.</p>
+        </section>
+    
+        <section id="about-awards" style="display: none;">
+            <h2>Awards and Recognition</h2>
+            <p>We take pride in our numerous awards that reflect our commitment to quality education, outstanding faculty, and an enriched learning environment. From academic achievements to co-curricular excellence, Holy Mission School has consistently set benchmarks in the educational field.</p>
+        </section>
+    
+        <section id="about-career" style="display: none;">
+            <h2>Career</h2>
+            <p>Join our team of passionate educators and staff who strive to make a difference in students' lives. Explore current job openings and contribute to shaping future leaders in a nurturing and professional environment.</p>
+        
+            <h3>Apply for a Position</h3>
+            <form id="career-form" action="submit_form.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="post-applied-for">Post Applied For:</label>
+                    <input type="text" id="post-applied-for" name="post-applied-for" required placeholder="Enter the post you are applying for">
+
+                    
+                </div>
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+        
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+        
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+        
+                <div class="form-group">
+                    <label for="resume">Resume (PDF only):</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="cover-letter">Cover Letter:</label>
+                    <textarea id="cover-letter" name="cover-letter" rows="5" placeholder="Write a brief cover letter" required></textarea>
+                </div>
+        
+                <button type="submit">Submit Application</button>
+            </form>
+        </section>
+        
+    
+        <section id="approach-academics" style="display: none;">
+            <h2>Academics</h2>
+            <p>Our academic programs are designed to build a strong foundation in all core subjects while encouraging creativity, critical thinking, and curiosity. We follow a learner-centric approach that adapts to individual student needs.</p>
+        </section>
+    
+        <section id="approach-programs" style="display: none;">
+            <h2>Programs</h2>
+            <p>We offer a diverse range of programs including science, commerce, arts, and vocational training to cater to varied interests and career aspirations. Each program integrates real-world skills with academic rigor.</p>
+        </section>
+    
+        <section id="facilities-overview" style="display: none;">
+            <h2>Facilities - Overview</h2>
+            <p>Our school campus provides a safe, stimulating, and modern environment. Equipped with state-of-the-art infrastructure, Holy Mission School offers the best facilities to support the academic and extracurricular growth of students.</p>
+        </section>
+    
+        <section id="facilities-sports" style="display: none;">
+            <h2>Sports</h2>
+            <p>Sports and physical education are integral to our curriculum. We provide excellent sports facilities and coaching in a variety of games including football, basketball, cricket, and athletics.</p>
+        </section>
+    
+        <section id="facilities-computer" style="display: none;">
+            <h2>Computer Lab</h2>
+            <p>Our computer labs are well-equipped with the latest technology to provide hands-on learning experiences. Students gain essential IT skills and explore coding, software tools, and digital citizenship.</p>
+        </section>
+    
+        <section id="facilities-science" style="display: none;">
+            <h2>Science Lab</h2>
+            <p>Our science laboratories offer students practical exposure to the wonders of physics, chemistry, and biology. Safety and scientific inquiry are at the core of every lab session.</p>
+        </section>
+        <section id="facilities-scripture" style="display: none;">
+            <h2>Learn Scriptures</h2>
+            <p>Our School brings the profound teachings of sacred scriptures to life in a way that speaks to the hearts and minds of a social media generation.</p>
+        </section>
+    
+    
+        <section id="admissions-overview" style="display: none;">
+            <h2>Admissions - Overview</h2>
+            <p>Holy Mission School welcomes students from diverse backgrounds. Our admission process is transparent, inclusive, and based on academic potential and overall development.</p>
+        </section>
+    
+        <section id="admissions-enroll" style="display: none;">
+            <h2>Enroll Now</h2>
+            <p>Begin your journey with Holy Mission School. Fill out our online application form or visit the school office for more information on the enrollment process and eligibility criteria.</p>
+        </section>
+    
+        <section id="stories-achievements" style="display: none;">
+            <h2>Achievements</h2>
+            <p>Our students and staff have earned accolades in academics, sports, arts, and community service. We celebrate each milestone and take pride in our achievements that inspire others.</p>
+        </section>
+    
+        <section id="stories-alumni" style="display: none;">
+            <h2>Alumni</h2>
+            <p>Our alumni are successful professionals and change-makers across various industries. We maintain a strong alumni network that actively contributes to mentoring and guiding current students.</p>
+        </section>
+    
+        <section id="edunext" style="display: none;">
+            <h2>Edunext</h2>
+            <p>Edunext is our digital learning and communication platform. It enables parents, students, and teachers to stay connected, monitor academic progress, and access educational resources.</p>
+        </section>
+    
+        <section id="contact" style="display: none;">
+            <h2>Contact Us</h2>
+            <p>Address: 123 Learning Lane, Knowledge City, IN<br>
+            Phone: +91 98765 43210<br>
+            Email: info@holymissionschool.in</p>
+        </section>
+        
+        
+    </main>
+    <footer>
+    <div id="chatbot">
+        <button onclick="toggleChatbot()" aria-label="Open/Close chatbot">Chat with Us</button>
+        <div id="chatbox" style="display: none;">
+            <div id="chatArea" style="max-height: 200px; overflow-y: auto; margin-bottom: 10px;"></div>
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <p style="text-align:center; padding: 10px; background-color: #f2f2f2; color: #333; font-size: 14px;">&copy; 2025 Holy Mission School. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Show only selected section, hide others
+        function showSection(id) {
+            const sections = document.querySelectorAll('main section');
+            sections.forEach(section => {
+                section.style.display = section.id === id ? 'block' : 'none';
+            });
+        }
+    
+        // Example usage (hook this to navigation items)
+        // showSection('about-mission');
+        
+    </script>
+    </body>
