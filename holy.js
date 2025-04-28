@@ -21,11 +21,11 @@ function sendMessage() {
         const typingMessage = document.createElement("div");
         typingMessage.textContent = "Chatbot is typing...";
         typingMessage.style.fontStyle = "italic";
-        typingMessage.style.color = "#888";
+        typingMessage.style.color = "#777";
         chatArea.appendChild(typingMessage);
 
         // Clear input box
-        input.value = "";
+        input.value = ""; 
 
         // Scroll chat area to bottom
         chatArea.scrollTop = chatArea.scrollHeight;
